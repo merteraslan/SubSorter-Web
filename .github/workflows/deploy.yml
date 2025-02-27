@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Fetch all history for all branches and tags
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -23,9 +21,16 @@ jobs:
         run: npm install
 
       - name: Build Gatsby site
-        run: npm run build -- --prefix-paths
+        run: |
+          echo "Building with path prefix..."
+          npm run build -- --prefix-paths
         env:
-          PREFIX_PATHS: true
+          PREFIX_PATHS: "true"
+
+      - name: Debug build output
+        run: |
+          echo "Checking build output..."
+          ls -la public/
 
       - name: Prepare docs directory
         run: |
@@ -33,9 +38,11 @@ jobs:
           mkdir -p docs
           cp -r public/* docs/
           touch docs/.nojekyll
-          # cp public/404.html docs/404.html
-          echo "Path prefix check in docs:"
-          grep -r "/subsorter-web/" docs/ --include="*.html" || echo "Warning: Path prefix not found in HTML files"
+
+      - name: Verify docs content
+        run: |
+          echo "Checking docs directory content..."
+          ls -la docs/
 
       - name: Commit and push changes
         run: |

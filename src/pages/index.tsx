@@ -2,7 +2,6 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import { useState, useRef, useEffect, useMemo } from "react"
-import { withPrefix } from "gatsby"  // <-- Import withPrefix
 
 // Add this type definition before the IndexPage component
 type FAQItem = {
@@ -135,27 +134,27 @@ const IndexPage = () => {
     // Enhanced image collection with better descriptions
     const images = [
         {
-            src: withPrefix("/images/image-1.png"),
+            src: "./images/image-1.png", // Update to relative path
             alt: "SubSorter settings panel with content filter options",
             description: "Easily customize content filters with our intuitive settings panel"
         },
         {
-            src: withPrefix("/images/image-2.png"),
+            src: "/images/image-2.png",
             alt: "Bundled videos from the same creator in YouTube subscription feed",
             description: "Group videos from your favorite creators to keep your feed organized"
         },
         {
-            src: withPrefix("/images/image-3.png"),
+            src: "/images/image-3.png",
             alt: "Quick view feature showing multiple videos in a dropdown",
             description: "Use the quick view feature to preview content without leaving your feed"
         },
         {
-            src: withPrefix("/images/image-4.png"),
+            src: "/images/image-4.png",
             alt: "Clean YouTube subscription feed with filtered content",
             description: "Enjoy a cleaner feed focused on the content you actually want to watch"
         },
         {
-            src: withPrefix("/images/image-5.png"),
+            src: "/images/image-5.png",
             alt: "Microsoft Research channel with bundled videos",
             description: "Technical channels like Microsoft Research become much easier to navigate"
         }
@@ -276,7 +275,7 @@ const IndexPage = () => {
                     <meta name="keywords" content="YouTube extension, subscription organizer, YouTube filter, hide shorts, bundle videos" />
                     <meta property="og:title" content="SubSorter - Organize Your YouTube Subscription Feed" />
                     <meta property="og:description" content="Filter out shorts, bundle videos from the same creator, and customize your YouTube subscription feed with SubSorter." />
-                    <meta property="og:image" content={withPrefix("/images/og-image.jpg")} />
+                    <meta property="og:image" content="/images/og-image.jpg" />
                     <meta property="og:type" content="website" />
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:creator" content="@mertxnt" />
@@ -300,6 +299,16 @@ const IndexPage = () => {
                         `}
                     </script>
                 </Helmet>
+
+                {/* Note: Adding styling note for the Layout component navbar */}
+                {/* 
+                Suggested navbar improvements for the Layout component:
+                1. Add a glass-morphism effect with backdrop-filter
+                2. Add subtle border instead of shadow
+                3. Improve button styling and hover effects
+                4. Add logo animation on hover
+                5. Improve mobile menu transitions
+                */}
 
                 {/* Hero Section */}
                 <section
@@ -372,7 +381,7 @@ const IndexPage = () => {
                                         <video
                                             ref={videoRef}
                                             className="w-full rounded-lg"
-                                            poster={withPrefix("/images/hero-screenshot.png")}
+                                            poster="/images/hero-screenshot.png"
                                             preload="metadata"
                                             controls
                                             playsInline
@@ -381,7 +390,7 @@ const IndexPage = () => {
                                             loop
                                         >
                                             <source
-                                                src={withPrefix("/videos/Subsort.mp4")}
+                                                src="/videos/Subsort.mp4"
                                                 type="video/mp4"
                                             />
                                             Your browser does not support the video tag.
@@ -627,19 +636,19 @@ const IndexPage = () => {
                                 <ul className="mt-4 space-y-2 text-gray-600">
                                     <li className="flex items-center">
                                         <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                         </svg>
                                         Native YouTube interface
                                     </li>
                                     <li className="flex items-center">
                                         <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                         </svg>
                                         No separate app needed
                                     </li>
                                     <li className="flex items-center">
                                         <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                         </svg>
                                         Lightweight performance
                                     </li>
@@ -648,6 +657,8 @@ const IndexPage = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Use Cases Section Removed */}
 
                 {/* How It Works Section */}
                 <section id="how-it-works" className="py-16 md:py-24">
@@ -821,7 +832,7 @@ const IndexPage = () => {
                                 className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src={withPrefix("/images/chrome-web-store.png")}
+                                    src="/images/chrome-web-store.png"
                                     alt="Available in the Chrome Web Store"
                                     className="h-16 md:h-20"
                                 />
@@ -835,7 +846,7 @@ const IndexPage = () => {
                                 className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src={withPrefix("/images/edge-web-store.svg")}
+                                    src="/images/edge-web-store.svg"
                                     alt="Get it from Microsoft Edge Add-ons"
                                     className="h-16 md:h-20"
                                 />
@@ -895,7 +906,7 @@ const IndexPage = () => {
                                 className="inline-block transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src={withPrefix("/images/bmc-full-logo.svg")}
+                                    src="/images/bmc-full-logo.svg"
                                     alt="Buy me a coffee"
                                     className="h-12"
                                 />
@@ -1024,6 +1035,8 @@ const IndexPage = () => {
                                     href="#"
                                     onClick={(e) => {
                                         e.preventDefault();
+                                        // Use the same feedback mechanism as the top navigation
+                                        // This would typically open a feedback form or modal
                                         alert('Please use the Feedback button in the navigation to submit your questions.');
                                     }}
                                     className="inline-flex items-center gap-2 bg-gray-800 text-white px-5 py-3 rounded-lg hover:bg-gray-700 transition-colors"
@@ -1087,7 +1100,7 @@ const IndexPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                             <div>
                                 <div className="flex items-center gap-2 mb-4">
-                                    <img src={withPrefix("/images/logo.svg")} alt="SubSorter Logo" className="h-8 w-8" />
+                                    <img src="/images/logo.svg" alt="SubSorter Logo" className="h-8 w-8" />
                                     <h2 className="text-2xl font-bold">SubSorter</h2>
                                 </div>
                                 <p className="text-gray-400 mb-4">

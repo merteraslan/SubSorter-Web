@@ -5,7 +5,7 @@
 
 module.exports = {
   // IMPORTANT: This must match your GitHub Pages repo name if you serve from a subfolder.
-  pathPrefix: "/subsorter-web",
+  pathPrefix: "/SubSorter-Web",
 
   siteMetadata: {
     title: `SubSorter - YouTube Subscription Feed Organizer`,
@@ -13,7 +13,7 @@ module.exports = {
     author: `@merteraslan`,
     // If you prefer just the domain, use "https://merteraslan.github.io"
     // and let pathPrefix handle the "/subsorter-web" part:
-    siteUrl: `https://merteraslan.github.io/subsorter-web/`,
+    siteUrl: `https://merteraslan.github.io/SubSorter-Web/`,
   },
 
   plugins: [
