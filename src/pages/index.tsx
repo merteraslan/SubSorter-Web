@@ -134,7 +134,7 @@ const IndexPage = () => {
     // Enhanced image collection with better descriptions
     const images = [
         {
-            src: "/images/image-1.png",
+            src: "./images/image-1.png",
             alt: "SubSorter settings panel with content filter options",
             description: "Easily customize content filters with our intuitive settings panel"
         },
@@ -390,7 +390,7 @@ const IndexPage = () => {
                                             loop
                                         >
                                             <source
-                                                src="/videos/Subsort.mp4"
+                                                src="./videos/Subsort.mp4"
                                                 type="video/mp4"
                                             />
                                             Your browser does not support the video tag.
@@ -832,7 +832,7 @@ const IndexPage = () => {
                                 className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src="/images/chrome-web-store.png"
+                                    src="./images/chrome-web-store.png"
                                     alt="Available in the Chrome Web Store"
                                     className="h-16 md:h-20"
                                 />
