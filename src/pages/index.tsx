@@ -134,27 +134,27 @@ const IndexPage = () => {
     // Enhanced image collection with better descriptions
     const images = [
         {
-            src: "./images/image-1.png", // Update to relative path
+            src: "./images/image-1.png",
             alt: "SubSorter settings panel with content filter options",
             description: "Easily customize content filters with our intuitive settings panel"
         },
         {
-            src: "/images/image-2.png",
+            src: "./images/image-2.png", // Updated to relative path
             alt: "Bundled videos from the same creator in YouTube subscription feed",
             description: "Group videos from your favorite creators to keep your feed organized"
         },
         {
-            src: "/images/image-3.png",
+            src: "./images/image-3.png", // Updated to relative path
             alt: "Quick view feature showing multiple videos in a dropdown",
             description: "Use the quick view feature to preview content without leaving your feed"
         },
         {
-            src: "/images/image-4.png",
+            src: "./images/image-4.png", // Updated to relative path
             alt: "Clean YouTube subscription feed with filtered content",
             description: "Enjoy a cleaner feed focused on the content you actually want to watch"
         },
         {
-            src: "/images/image-5.png",
+            src: "./images/image-5.png", // Updated to relative path
             alt: "Microsoft Research channel with bundled videos",
             description: "Technical channels like Microsoft Research become much easier to navigate"
         }
@@ -369,43 +369,19 @@ const IndexPage = () => {
                                 </div>
                             </div>
                             <div className="md:w-1/2 animate-on-scroll">
-                                <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-r from-gray-900 to-black p-2">
-                                    <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-r from-gray-800 to-gray-700 flex items-center px-3 rounded-t-lg">
-                                        <div className="flex gap-1.5">
-                                            <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                                            <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                                        </div>
-                                    </div>
-                                    <div className="pt-6">
-                                        <video
-                                            ref={videoRef}
-                                            className="w-full rounded-lg"
-                                            poster="/images/hero-screenshot.png"
-                                            preload="metadata"
-                                            controls
-                                            playsInline
-                                            muted
-                                            autoPlay
-                                            loop
-                                        >
-                                            <source
-                                                src="/videos/Subsort.mp4"
-                                                type="video/mp4"
-                                            />
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        {isLoading && (
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60">
-                                                <div className="w-20 h-20 rounded-full bg-red-600 bg-opacity-90 flex items-center justify-center">
-                                                    <svg className="animate-spin h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
+                                <div className="relative w-full max-w-4xl mx-auto mt-8 rounded-lg overflow-hidden shadow-2xl">
+                                    <video
+                                        ref={videoRef}
+                                        className="w-full h-auto"
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        poster="./images/video-poster.jpg"
+                                    >
+                                        <source src="./videos/demo.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -823,32 +799,29 @@ const IndexPage = () => {
                             </p>
                         </div>
 
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 animate-on-scroll">
-                            {/* Chrome Web Store */}
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                             <a
                                 href="https://chrome.google.com/webstore/detail/your-extension-id"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
+                                className="transition-transform hover:scale-105"
                             >
                                 <img
-                                    src="/images/chrome-web-store.png"
+                                    src="./images/chrome-web-store.svg"
                                     alt="Available in the Chrome Web Store"
-                                    className="h-16 md:h-20"
+                                    className="h-16"
                                 />
                             </a>
-
-                            {/* Microsoft Edge Add-ons */}
                             <a
                                 href="https://microsoftedge.microsoft.com/addons/detail/your-extension-id"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
+                                className="transition-transform hover:scale-105"
                             >
                                 <img
-                                    src="/images/edge-web-store.svg"
+                                    src="./images/edge-web-store.svg"
                                     alt="Get it from Microsoft Edge Add-ons"
-                                    className="h-16 md:h-20"
+                                    className="h-16"
                                 />
                             </a>
                         </div>
@@ -903,12 +876,12 @@ const IndexPage = () => {
                                 href="https://www.buymeacoffee.com/your-username"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
+                                className="inline-block"
                             >
                                 <img
-                                    src="/images/bmc-full-logo.svg"
-                                    alt="Buy me a coffee"
-                                    className="h-12"
+                                    src="./images/bmc-full-logo.svg"
+                                    alt="Buy Me A Coffee"
+                                    className="h-12 transition-transform hover:scale-105"
                                 />
                             </a>
 
@@ -1100,7 +1073,7 @@ const IndexPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                             <div>
                                 <div className="flex items-center gap-2 mb-4">
-                                    <img src="/images/logo.svg" alt="SubSorter Logo" className="h-8 w-8" />
+                                    <img src="./images/logo.svg" alt="SubSorter Logo" className="h-8 w-8" />
                                     <h2 className="text-2xl font-bold">SubSorter</h2>
                                 </div>
                                 <p className="text-gray-400 mb-4">
