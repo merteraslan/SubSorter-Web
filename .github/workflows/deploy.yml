@@ -37,7 +37,6 @@ jobs:
           rm -rf docs
           mkdir -p docs
           cp -r public/* docs/
-          cp -r static/* docs/
           touch docs/.nojekyll
 
       - name: Verify docs content

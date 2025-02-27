@@ -134,12 +134,12 @@ const IndexPage = () => {
     // Enhanced image collection with better descriptions
     const images = [
         {
-            src: "/subsorter-web/images/image-1.png", // Update to include pathPrefix
+            src: "./images/image-1.png", // Update to relative path
             alt: "SubSorter settings panel with content filter options",
             description: "Easily customize content filters with our intuitive settings panel"
         },
         {
-            src: "/subsorter-web/images/image-2.png",
+            src: "/images/image-2.png",
             alt: "Bundled videos from the same creator in YouTube subscription feed",
             description: "Group videos from your favorite creators to keep your feed organized"
         },
@@ -380,13 +380,20 @@ const IndexPage = () => {
                                     <div className="pt-6">
                                         <video
                                             ref={videoRef}
+                                            className="w-full rounded-lg"
+                                            poster="/images/hero-screenshot.png"
+                                            preload="metadata"
+                                            controls
+                                            playsInline
+                                            muted
                                             autoPlay
                                             loop
-                                            muted
-                                            playsInline
-                                            className="w-full h-full object-cover absolute inset-0"
                                         >
-                                            <source src="/subsorter-web/videos/demo.mp4" type="video/mp4" />
+                                            <source
+                                                src="/videos/Subsort.mp4"
+                                                type="video/mp4"
+                                            />
+                                            Your browser does not support the video tag.
                                         </video>
                                         {isLoading && (
                                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60">
@@ -825,7 +832,7 @@ const IndexPage = () => {
                                 className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src="/subsorter-web/images/chrome-web-store.svg"
+                                    src="/images/chrome-web-store.png"
                                     alt="Available in the Chrome Web Store"
                                     className="h-16 md:h-20"
                                 />
@@ -839,7 +846,7 @@ const IndexPage = () => {
                                 className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src="/subsorter-web/images/edge-web-store.svg"
+                                    src="/images/edge-web-store.svg"
                                     alt="Get it from Microsoft Edge Add-ons"
                                     className="h-16 md:h-20"
                                 />
@@ -899,8 +906,8 @@ const IndexPage = () => {
                                 className="inline-block transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src="/subsorter-web/images/bmc-full-logo.svg"
-                                    alt="Buy Me A Coffee"
+                                    src="/images/bmc-full-logo.svg"
+                                    alt="Buy me a coffee"
                                     className="h-12"
                                 />
                             </a>
