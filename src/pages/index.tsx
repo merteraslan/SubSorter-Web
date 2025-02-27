@@ -379,7 +379,7 @@ const IndexPage = () => {
                                         playsInline
                                         poster="./images/video-poster.jpg"
                                     >
-                                        <source src="./videos/demo.mp4" type="video/mp4" />
+                                        <source src="./videos/Subsort.mp4" type="video/mp4" />
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
