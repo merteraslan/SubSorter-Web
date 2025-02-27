@@ -1,16 +1,18 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all branches and tags
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -20,11 +22,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build Gatsby site
         run: npm run build
+        env:
+          PREFIX_PATHS: true
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+      - name: Prepare docs directory
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r public/* docs/
+          touch docs/.nojekyll # This prevents GitHub from using Jekyll to process your site
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs
+          git commit -m "Deploy Gatsby site to docs folder" || echo "No changes to commit"
+          git push
