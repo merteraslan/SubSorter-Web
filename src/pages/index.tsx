@@ -2,6 +2,7 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import { useState, useRef, useEffect, useMemo } from "react"
+import { withPrefix } from "gatsby"
 
 // Add this type definition before the IndexPage component
 type FAQItem = {
@@ -134,27 +135,27 @@ const IndexPage = () => {
     // Enhanced image collection with better descriptions
     const images = [
         {
-            src: "./images/image-1.png", // Update to relative path
+            src: withPrefix("/images/image-1.png"),
             alt: "SubSorter settings panel with content filter options",
             description: "Easily customize content filters with our intuitive settings panel"
         },
         {
-            src: "/images/image-2.png",
+            src: withPrefix("/images/image-2.png"),
             alt: "Bundled videos from the same creator in YouTube subscription feed",
             description: "Group videos from your favorite creators to keep your feed organized"
         },
         {
-            src: "/images/image-3.png",
+            src: withPrefix("/images/image-3.png"),
             alt: "Quick view feature showing multiple videos in a dropdown",
             description: "Use the quick view feature to preview content without leaving your feed"
         },
         {
-            src: "/images/image-4.png",
+            src: withPrefix("/images/image-4.png"),
             alt: "Clean YouTube subscription feed with filtered content",
             description: "Enjoy a cleaner feed focused on the content you actually want to watch"
         },
         {
-            src: "/images/image-5.png",
+            src: withPrefix("/images/image-5.png"),
             alt: "Microsoft Research channel with bundled videos",
             description: "Technical channels like Microsoft Research become much easier to navigate"
         }
@@ -381,7 +382,7 @@ const IndexPage = () => {
                                         <video
                                             ref={videoRef}
                                             className="w-full rounded-lg"
-                                            poster="/images/hero-screenshot.png"
+                                            poster={withPrefix("/images/hero-screenshot.png")}
                                             preload="metadata"
                                             controls
                                             playsInline
@@ -390,7 +391,7 @@ const IndexPage = () => {
                                             loop
                                         >
                                             <source
-                                                src="/videos/Subsort.mp4"
+                                                src={withPrefix("/videos/Subsort.mp4")}
                                                 type="video/mp4"
                                             />
                                             Your browser does not support the video tag.
@@ -832,7 +833,7 @@ const IndexPage = () => {
                                 className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src="/images/chrome-web-store.png"
+                                    src={withPrefix("/images/chrome-web-store.png")}
                                     alt="Available in the Chrome Web Store"
                                     className="h-16 md:h-20"
                                 />
@@ -846,7 +847,7 @@ const IndexPage = () => {
                                 className="transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src="/images/edge-web-store.svg"
+                                    src={withPrefix("/images/edge-web-store.svg")}
                                     alt="Get it from Microsoft Edge Add-ons"
                                     className="h-16 md:h-20"
                                 />
@@ -906,7 +907,7 @@ const IndexPage = () => {
                                 className="inline-block transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 rounded-lg"
                             >
                                 <img
-                                    src="/images/bmc-full-logo.svg"
+                                    src={withPrefix("/images/bmc-full-logo.svg")}
                                     alt="Buy me a coffee"
                                     className="h-12"
                                 />
@@ -1100,7 +1101,7 @@ const IndexPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                             <div>
                                 <div className="flex items-center gap-2 mb-4">
-                                    <img src="/images/logo.svg" alt="SubSorter Logo" className="h-8 w-8" />
+                                    <img src={withPrefix("/images/logo.svg")} alt="SubSorter Logo" className="h-8 w-8" />
                                     <h2 className="text-2xl font-bold">SubSorter</h2>
                                 </div>
                                 <p className="text-gray-400 mb-4">
