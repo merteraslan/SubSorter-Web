@@ -4,12 +4,18 @@
  */
 
 module.exports = {
+  // IMPORTANT: This must match your GitHub Pages repo name if you serve from a subfolder.
+  pathPrefix: "/subsorter-web",
+
   siteMetadata: {
     title: `SubSorter - YouTube Subscription Feed Organizer`,
     description: `Enhance your YouTube subscription feed by hiding shorts, filtering streams, and bundling multiple videos from the same creator.`,
     author: `@merteraslan`,
+    // If you prefer just the domain, use "https://merteraslan.github.io"
+    // and let pathPrefix handle the "/subsorter-web" part:
     siteUrl: `https://merteraslan.github.io/subsorter-web/`,
   },
+
   plugins: [
     `gatsby-plugin-image`,
     {
@@ -26,11 +32,14 @@ module.exports = {
       options: {
         name: `subsorter-landing-page`,
         short_name: `subsorter`,
+
+        // For a PWA, you may want this to be "/subsorter-web/" so it starts in the subfolder:
         start_url: `/`,
+
         background_color: `#ffffff`,
         theme_color: `#dc2626`,
         display: `minimal-ui`,
-        icon: `src/images/subsorter-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/subsorter-icon.png`, // Path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -39,33 +48,27 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `inter\:400,500,600,700`,
+          `inter:400,500,600,700`,
         ],
-        display: 'swap'
-      }
+        display: 'swap',
+      },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // You can add your Google Analytics tracking ID here
+        // Add your Google Analytics tracking ID here when ready
         trackingIds: [
-          "GA-TRACKING-ID", // Replace with your Google Analytics tracking ID when ready
+          "GA-TRACKING-ID",
         ],
-        // This object gets passed to the gtag config command
         gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 0,
         },
-        // This object is used for configuration specific to this plugin
         pluginConfig: {
-          // Puts tracking script in the head instead of the body
           head: false,
-          // Setting this parameter is also optional
           respectDNT: true,
         },
       },
     },
   ],
-  // Use this when deploying to GitHub Pages
-  pathPrefix: "/subsorter-web",
-}
+};
