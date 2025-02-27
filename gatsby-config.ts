@@ -67,5 +67,5 @@ module.exports = {
     },
   ],
   // Use this when deploying to GitHub Pages
-  pathPrefix: "/subsorter",
+  pathPrefix: "/subsorter-web",
 }

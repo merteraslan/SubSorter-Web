@@ -6,7 +6,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "rimraf .cache public",
     "typecheck": "tsc --noEmit",

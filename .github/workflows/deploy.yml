@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Build Gatsby site
-        run: npm run build
+        run: npm run build -- --prefix-paths
         env:
           PREFIX_PATHS: true
 
@@ -32,7 +32,10 @@ jobs:
           rm -rf docs
           mkdir -p docs
           cp -r public/* docs/
-          touch docs/.nojekyll # This prevents GitHub from using Jekyll to process your site
+          touch docs/.nojekyll
+          cp public/404.html docs/404.html
+          echo "Path prefix check in docs:"
+          grep -r "/subsorter-web/" docs/ --include="*.html" || echo "Warning: Path prefix not found in HTML files"
 
       - name: Commit and push changes
         run: |
