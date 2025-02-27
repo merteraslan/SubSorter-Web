@@ -1,4 +1,4 @@
-# YouTube Subscription Manager
+# SubSorter
 
 A Chrome extension that enhances your YouTube subscription feed with powerful filtering and organization features.
 
@@ -6,7 +6,7 @@ A Chrome extension that enhances your YouTube subscription feed with powerful fi
 
 ### Video Filtering
 - **Hide Shorts**: Remove YouTube Shorts from your subscription feed
-- **Filter Streams**: Hide previously streamed videos
+- **Hide Streamed Videos**: Hide previously streamed videos
 - **Hide Live Videos**: Remove currently live broadcasts
 - **Hide Premieres**: Filter out scheduled video premieres
 
@@ -51,15 +51,6 @@ There are two ways to configure the extension:
 - **Adaptive UI**: Modal for viewing bundled videos adapts to YouTube's dark/light themes
 - **Performance**: Uses debouncing to avoid excessive processing when scrolling
 
-## File Structure
-
-- **manifest.json**: Chrome extension configuration
-- **content.js**: Entry point that initializes the extension
-- **settingsManager.js**: Handles loading/saving user preferences
-- **videoFilters.js**: Logic for detecting and filtering video types
-- **bundling.js**: Groups videos from the same creator
-- **observerManager.js**: Watches for page changes to apply filters
-- **uiComponents.js**: Creates UI elements and styling
 
 ## Permissions
 
