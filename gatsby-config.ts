@@ -1,11 +1,11 @@
 import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
-  pathPrefix: "/your-repo-name", // Replace with your GitHub repository name
+  pathPrefix: "/SubSorter-Web", // Your actual repository name
   siteMetadata: {
-    title: `Your Extension Documentation`,
-    description: `Documentation for your browser extension`,
-    siteUrl: `https://your-username.github.io/your-repo-name`, // Replace with your GitHub Pages URL
+    title: `SubSorter Documentation`,
+    description: `Documentation for SubSorter browser extension`,
+    siteUrl: `https://your-username.github.io/SubSorter-Web`, // Update with your username
   },
   // If you're not familiar with the "as const" syntax, you can skip it
   graphqlTypegen: true,
@@ -13,6 +13,8 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-source-filesystem",
       options: {
