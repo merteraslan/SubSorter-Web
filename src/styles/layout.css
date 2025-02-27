@@ -57,9 +57,142 @@ img {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Global wrapper styles */
-.global-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+/* Responsive utilities */
+@media (min-width: 768px) {
+    .md\:flex {
+        display: flex;
+    }
+
+    .md\:flex-row {
+        flex-direction: row;
+    }
+
+    .md\:py-24 {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Transitions */
+.transition {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #dc2626;
+    color: white;
+    border: 1px solid #dc2626;
+}
+
+.btn-primary:hover {
+    background-color: #b91c1c;
+    border-color: #b91c1c;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid currentColor;
+}
+
+.btn-outline-white {
+    color: white;
+    border-color: white;
+}
+
+.btn-outline-white:hover {
+    background-color: white;
+    color: #dc2626;
+}
+
+/* For GitHub Pages */
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    20%,
+    60% {
+        transform: rotate(-25deg);
+    }
+
+    40%,
+    80% {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
 }
