@@ -59,10 +59,6 @@ The extension requires:
 - `activeTab`: To interact with the YouTube page
 - `https://www.youtube.com/*`: To operate on YouTube's website
 
-## License
-
-[MIT License](LICENSE)
-
 ## Support
 
 If you encounter any issues or have suggestions, please open an issue on the GitHub repository.
