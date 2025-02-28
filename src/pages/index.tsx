@@ -1033,13 +1033,9 @@ const IndexPage = () => {
                             <p className="text-gray-600 mb-4">Still have questions?</p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <a
-                                    href="#"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        // Use the same feedback mechanism as the top navigation
-                                        // This would typically open a feedback form or modal
-                                        alert('Please use the Feedback button in the navigation to submit your questions.');
-                                    }}
+                                    href="https://github.com/merteraslan/subsorter-web/issues"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 bg-gray-800 text-white px-5 py-3 rounded-lg hover:bg-gray-700 transition-colors"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1101,7 +1097,8 @@ const IndexPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                             <div>
                                 <div className="flex items-center gap-2 mb-4">
-                                    <img src={withPrefix("/images/logo.svg")} alt="SubSorter Logo" className="h-8 w-8" />
+                                    {/* Update the logo image source */}
+                                    <img src={withPrefix("/images/subsorter-icon.png")} alt="SubSorter Logo" className="h-8 w-8" />
                                     <h2 className="text-2xl font-bold">SubSorter</h2>
                                 </div>
                                 <p className="text-gray-400 mb-4">
@@ -1175,10 +1172,10 @@ const IndexPage = () => {
                                 <h3 className="text-lg font-semibold mb-4">Support</h3>
                                 <ul className="space-y-2">
                                     <li>
-                                        <a href="https://www.buymeacoffee.com/your-username" className="text-gray-400 hover:text-white transition">Sponsor</a>
+                                        <a href="https://www.buymeacoffee.com/merteraslan" className="text-gray-400 hover:text-white transition">Sponsor</a>
                                     </li>
                                     <li>
-                                        <a href="mailto:contact@subsorter.com" className="text-gray-400 hover:text-white transition">Contact</a>
+                                        <a href="mailto:mertegithub@gmail.com" className="text-gray-400 hover:text-white transition">Contact</a>
                                     </li>
                                     <li>
                                         <a href="https://twitter.com/mertxnt" className="text-gray-400 hover:text-white transition">Twitter</a>
