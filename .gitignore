@@ -22,7 +22,6 @@
 Thumbs.db
 /.qodo
 /tests
-/docs
 
 # Debug logs
 npm-debug.log*
